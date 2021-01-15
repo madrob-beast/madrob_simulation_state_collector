@@ -23,8 +23,8 @@ from eurobench_bms_msgs_and_srvs.srv import *
 
 
 
-VERBOSE=True
-#VERBOSE=False
+
+VERBOSE=False
 
 class madrob_simulation_state_collector:
     def __init__(self):
@@ -304,8 +304,8 @@ def getScene(benchmark_name):
     return arg1, arg2
     
 def restartSim(ebws):
-    if VERBOSE: 
-        print("***** RESTARTING SIMULATION FOR PARAMETERS CHANGE *****")
+    print("***** RESTARTING SIMULATION FOR PARAMETER CHANGE *****")
+    
     ebws.launch.shutdown()
     print ebws.current_benchmark_name
     # arg0, arg1 = getScene(ebws.current_benchmark_name)
