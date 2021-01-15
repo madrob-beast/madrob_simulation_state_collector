@@ -309,7 +309,7 @@ def restartSim(ebws):
     ebws.launch.shutdown()
     print ebws.current_benchmark_name
     arg0, arg1 = getScene(ebws.current_benchmark_name)
-    arg1 = noforce # since now the force is controlled by the gazebo "simple door" plugin
+    arg1 = 'door:=simple','self_closing:=n' # since now the force is controlled by the gazebo "simple door" plugin
     
     arg2 = 'direction:=pull' if ebws.current_door_opening_side == "CW" else 'direction:=push'
     arg3 = 'robot_placement_cw:=true' if ebws.current_robot_approach_side == "CW" else 'robot_placement_cw:=false'
